@@ -44,7 +44,6 @@ html{
     background-color: $main__color-pink;
     max-width:100%;
     z-index:3;
-    height: 3.5rem;
     & h1 a{
         @include font;
     }
