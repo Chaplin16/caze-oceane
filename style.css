@@ -23,8 +23,11 @@ html {
 }
 
 .navbar {
+  position: fixed;
+  width: 100%;
   background-color: #ce6c7c;
   max-width: 100%;
+  z-index: 3;
 }
 
 .navbar h1 a {
@@ -38,8 +41,8 @@ html {
 
 .navbar .navbar-toggler {
   background-color: white !important;
-  border-color: rgba(65, 92, 26, 0.6);
-  border: 2px solid rgba(65, 92, 26, 0.6) !important;
+  border-color: #748a77;
+  border: 2px solid #748a77 !important;
   border-radius: 15px !important;
 }
 
@@ -65,17 +68,21 @@ html {
 }
 
 .phone {
-  background-color: rgba(65, 92, 26, 0.6);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 3.7rem;
+  background-color: #748a77;
   color: #000;
   font-weight: bold;
-  height: 4rem;
-  font-size: 1.4rem;
+  height: 3rem;
+  font-size: 1.2rem;
+  z-index: 5;
 }
 
 main {
-  padding-bottom: 3rem;
   background-image: url(images/vintage-concrete.png);
   min-height: 100% !important;
+  padding-bottom: 3rem !important;
 }
 
 .product {
@@ -87,21 +94,44 @@ main {
   position: absolute;
   width: 45vh;
   left: 50%;
-  margin-left: -14.5rem;
+  margin-left: -14.7rem;
+  top: 5rem;
 }
 
 .product p {
-  color: rgba(65, 92, 26, 0.6) !important;
+  color: #748a77 !important;
   font-weight: bold;
   font-size: 2rem;
 }
 
 .product p:nth-of-type(1) {
-  margin-top: 5rem;
+  margin-top: 8rem;
 }
 
 .product p:nth-of-type(3) {
   margin-bottom: 5rem;
+}
+
+.presentation {
+  font-size: 1.6rem;
+  max-width: 80%;
+  font-weight: 500;
+  text-align: justify !important;
+}
+
+.presentation p::first-letter {
+  padding-left: 4rem;
+}
+
+.presentation p:nth-of-type(2) {
+  color: #748a77;
+  background: -webkit-gradient(linear, left top, right top, from(#748a77), color-stop(#ce6c7c), to(#748a77));
+  background: linear-gradient(90deg, #748a77, #ce6c7c, #748a77);
+  background-size: 70%;
+  -webkit-animation: animate 10s infinite ease-in;
+          animation: animate 10s infinite ease-in;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
 .card {
@@ -122,7 +152,7 @@ main {
 .card .card-body {
   border-bottom-left-radius: 25px !important;
   border-bottom-right-radius: 25px !important;
-  background-color: rgba(65, 92, 26, 0.6);
+  background-color: #748a77;
 }
 
 .card .card-body p {
@@ -231,15 +261,16 @@ main {
 }
 
 .footer .director a:hover {
-  color: rgba(65, 92, 26, 0.6);
+  color: #748a77;
 }
 
 .clothes {
   text-align: center;
   font-size: 3rem !important;
   margin: 3rem;
-  background: -webkit-gradient(linear, left top, right top, from(#000), color-stop(#ce6c7c), to(#000));
-  background: linear-gradient(90deg, #000, #ce6c7c, #000);
+  padding-top: 2rem;
+  background: -webkit-gradient(linear, left top, right top, from(#748a77), color-stop(#ce6c7c), to(#748a77));
+  background: linear-gradient(90deg, #748a77, #ce6c7c, #748a77);
   background-size: 70%;
   -webkit-animation: animate 10s infinite ease-in;
           animation: animate 10s infinite ease-in;
@@ -264,9 +295,126 @@ main {
           column-gap: 3.5rem;
 }
 
-@media all and (min-width: 900px) {
-  .navbar .phone {
-    margin-left: 6%;
+.schedule {
+  text-align: center;
+}
+
+.schedule h3,
+.schedule h4 {
+  font-size: 2.5rem !important;
+  margin: 2.5rem;
+  margin-top: 6rem;
+  background: -webkit-gradient(linear, left top, right top, from(#748a77), color-stop(#ce6c7c), to(#748a77));
+  background: linear-gradient(90deg, #748a77, #ce6c7c, #748a77);
+  background-size: 70%;
+  -webkit-animation: animate 10s infinite ease-in;
+          animation: animate 10s infinite ease-in;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+.schedule p {
+  font-size: 2rem !important;
+  font-size: 1.8rem !important;
+}
+
+iframe {
+  margin-top: 2rem;
+}
+
+@media all and (max-width: 450px) {
+  .phone {
+    font-size: 1.2rem;
+  }
+  .product {
+    max-width: 80%;
+  }
+  .product .arabesque {
+    left: 88%;
+    width: 50vh;
+  }
+  .product p {
+    font-size: 1.3rem;
+  }
+  .product p:nth-of-type(1) {
+    margin-top: 2.7rem;
+  }
+  .product p:nth-of-type(3) {
+    margin-bottom: 0;
+  }
+  .presentation {
+    font-size: 1.2rem;
+    text-align: justify !important;
+  }
+  .presentation p::first-letter {
+    padding-left: 3rem;
+  }
+  .presentation p:nth-of-type(2)::first-letter {
+    padding-left: 0;
+  }
+  .card {
+    width: 80% !important;
+  }
+  .card p {
+    font-size: 1rem !important;
+  }
+  .card .card-body h3 {
+    font-size: 1.5rem !important;
+  }
+  .schedule p {
+    font-size: 1.2rem !important;
+  }
+  .clothes {
+    font-size: 2rem !important;
+  }
+  .footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .footer .relance {
+    margin: auto;
+  }
+  .footer .copyright {
+    font-size: 1rem;
+    width: 80%;
+    margin: auto;
+    padding-top: 0.5rem;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  .product .arabesque {
+    left: 96%;
+  }
+  .product p {
+    font-size: 1.1rem;
+  }
+  .presentation {
+    font-size: 1rem;
+  }
+}
+
+@media all and (max-width: 350px) {
+  .product .arabesque {
+    left: 115%;
+  }
+  .product p {
+    font-size: 0.9rem;
+  }
+  .product p:nth-of-type(1) {
+    margin-top: 1.9rem;
+  }
+  .card .card-body h3 {
+    font-size: 1.3rem !important;
+  }
+  .clothes {
+    font-size: 1.8rem !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
