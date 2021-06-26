@@ -2,6 +2,23 @@
 $main__color-pink: rgb(206, 108, 124);
 $main__color-green: rgba(65, 92, 26, 0.6);
 
+@keyframes animate {
+    0% {
+    background-position: -500%;
+    }
+    100% {
+    background-position: 500%;
+    }
+}
+
+@mixin sunEffect{
+    background: linear-gradient(90deg,  #000, $main__color-pink,#000);
+    background-size: 70%;
+    animation: animate 10s infinite ease-in;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
 @mixin font{
     color: #000!important;
     font-weight: bold;
@@ -64,6 +81,7 @@ html{
 main{
     padding-bottom:3rem;
     background-image: url(images/vintage-concrete.png);
+    min-height: 100%!important;
 }
 
 
@@ -91,7 +109,6 @@ main{
     }
     
 }
-
 
 .card {
     border: none!important; 
@@ -185,13 +202,26 @@ main{
 }
 
 // page clothes.html 
+.clothes{
+    text-align:center;
+    font-size: 3rem!important;
+    margin: 3rem;
+    @include sunEffect;
+}
 .around_clothes{
     border-radius: 20px;
     height: 90%;
     object-fit: cover;
+    box-shadow: 5px 4px 10px rgb(54, 54, 54);
+
 }
 
-
+#card_clothes,
+#card_items,
+#card_decoration{
+    max-width:80%;
+    column-gap: 3.5rem;
+}
 
 @media all and (min-width: 900px){
     .navbar .phone{
